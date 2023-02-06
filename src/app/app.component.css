@@ -1,0 +1,45 @@
+/*#container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.child {
+
+    width: 300px;
+    height: 300px;
+}
+
+#child1 {
+
+    background-color: red;
+}
+
+#child2 {
+
+    background-color: green;
+}
+
+#child3 {
+
+    background-color: blue;
+}*/
+
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+}
+
+mat-sidenav {
+    width: 200px;
+}
+
+a {
+    color:white;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color:rgba(255, 255, 255, 0.671);
+}
