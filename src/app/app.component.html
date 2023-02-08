@@ -42,34 +42,28 @@
   <mat-sidenav-content>
 
     <mat-toolbar color="primary">
-      <div fxHide.gt-xs>
+
+      <div>
+        <a routerLink="/">Logo</a>
+      </div>
+      <div>
         <button (click)="sidenav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
       </div>
-      <div>
-        <a routerLink="/">Logo</a>
-      </div>
-      <div fxFlex fxLayoutAlign="end" fxLayoutGap="15px" fxHide.xs>
-        <a routerLink="/signup">Signup</a>
-        <a routerLink="/login">Login</a>
-        <a routerLink="/training">Training</a>
-        <a routerLink=""></a>
-      </div>
 
-      <div fxFlex fxLayoutAlign="end"
-      fxLayoutGap="10px" fxHide.xs>
+      <div fxFlex fxLayoutAlign="end" fxLayoutGap="10px" fxHide.xs>
 
         <a routerLink="/signup">Signup</a>
         <a routerLink="/login">Login</a>
         <a routerLink="/training">Training</a>
-        <button mat-raised-button color="warn" 
-        (click)="openProfile(this.userService.currentUser.id)">{{ this.userService.currentUser.email }}</button>
+        <button mat-raised-button color="warn" (click)="openProfile(this.userService.currentUser.id)">{{
+          this.userService.currentUser.email }}</button>
 
-      </div> 
+      </div>
     </mat-toolbar>
 
     <router-outlet></router-outlet>
-    
+
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './auth/signup/signup.component';
@@ -18,6 +18,7 @@ import { TrainingService } from './training/training.service';
 import { StopTrainingComponent } from './training/current-training/stop-training/stop-training.component';
 import { UserService } from './auth/user.service';
 import { ProfileComponent } from './auth/profile/profile.component';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProfileComponent } from './auth/profile/profile.component';
     CurrentTrainingComponent,
     NewTrainingComponent,
     StopTrainingComponent,
-    ProfileComponent
+    ProfileComponent,
+    OrdersComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,10 +40,10 @@ import { ProfileComponent } from './auth/profile/profile.component';
     RoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [TrainingService, UserService],
   bootstrap: [AppComponent],
-  entryComponents: [StopTrainingComponent, ProfileComponent] 
+  entryComponents: [StopTrainingComponent, ProfileComponent],
 })
-export class AppModule { }
+export class AppModule {}

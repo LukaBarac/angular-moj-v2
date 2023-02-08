@@ -33,5 +33,7 @@ export class ProfileComponent implements OnInit {
     console.log(UserService.dummyUserList);
     this.isEditing = false;
   }
-
+  manageEditing(){
+    this.isEditing=!this.isEditing
+  }
 }
