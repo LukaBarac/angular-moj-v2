@@ -3,8 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { OrderService } from 'src/app/orders/order.service';
-import { Exercise } from '../exercise.model';
-import { TrainingService } from '../training.service';
+import { Product } from '../product.model';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-previous-training',
@@ -13,29 +13,29 @@ import { TrainingService } from '../training.service';
 })
 export class PreviousTrainingComponent implements OnInit, AfterViewInit {
   //ovde stavljas produkte u servis na klik dodaj
-  displayedColumns = ['date', 'name', 'duration', 'calories', 'status'];
-  exerciseSource = new MatTableDataSource<Exercise>();
+  displayedColumns = ['warantyExpiryDate', 'name', 'color', 'price', 'availability'];
+  productDataSource = new MatTableDataSource<Product>();
 
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(
-    private trainingService: TrainingService,
+    private productService: ProductService,
     private order: OrderService
   ) {}
   add() {
     //push u niz produakta u order servisu
   }
   ngOnInit(): void {
-    this.exerciseSource.data = this.trainingService.getExercises();
+    this.productDataSource.data = this.productService.getProducts();
   }
 
   ngAfterViewInit(): void {
-    this.exerciseSource.sort = this.sort;
-    this.exerciseSource.paginator = this.paginator;
+    this.productDataSource.sort = this.sort;
+    this.productDataSource.paginator = this.paginator;
   }
 
   doFilter(filterValue: string) {
-    this.exerciseSource.filter = filterValue.trim().toLowerCase();
+    this.productDataSource.filter = filterValue.trim().toLowerCase();
   }
 }

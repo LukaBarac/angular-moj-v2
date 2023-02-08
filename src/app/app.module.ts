@@ -14,7 +14,7 @@ import { MaterialModule } from './material.module';
 import { RoutingModule } from './routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
-import { TrainingService } from './training/training.service';
+import { ProductService } from './training/product.service';
 import { StopTrainingComponent } from './training/current-training/stop-training/stop-training.component';
 import { UserService } from './auth/user.service';
 import { ProfileComponent } from './auth/profile/profile.component';
@@ -42,7 +42,7 @@ import { OrdersComponent } from './orders/orders.component';
     FlexLayoutModule,
     FormsModule,
   ],
-  providers: [TrainingService, UserService],
+  providers: [ProductService, UserService],
   bootstrap: [AppComponent],
   entryComponents: [StopTrainingComponent, ProfileComponent],
 })
